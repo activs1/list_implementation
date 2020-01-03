@@ -15,7 +15,7 @@ public:
 	void push_back(T data);
 	void pop_back();
 	void print();
-	int getLength();
+	int size();
 	T getFirst();
 	T getLast();
 	T* begin();
@@ -59,7 +59,7 @@ void TList<T>::print() {
 }
 
 template <class T>
-int TList<T>::getLength() {
+int TList<T>::size() {
 	return length;
 }
 

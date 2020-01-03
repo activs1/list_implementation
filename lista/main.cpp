@@ -34,7 +34,7 @@ int main() {
 
 	//checking if TList.empty() is working:
 	TList<int> new_list;
-	std::cout << "\n\n" << new_list.getLength();
+	std::cout << "\n\n" << new_list.size();
 	std::cout << "\n\nNowa lista jest: " << new_list.empty() << ". Stara lista jest: " << mlist.empty() << std::endl; //1 for empty, 0 for contains something
 
 	
