@@ -4,7 +4,7 @@
 
 int main() {
 	
-	UList<int> mlist;
+	TList<int> mlist;
 
 	std::list<int> lista;
 
@@ -28,7 +28,14 @@ int main() {
 	std::cout << "\n\nPierwszy element (glowa): " << mlist.getFirst();
 	std::cout << "\n\nOstatni element (ogon): " << mlist.getLast();
 
+
+	//comparing sizes: list implemented vs list stl vs array
 	std::cout << "\n\n" << sizeof(mlist) << " |||| " << sizeof(lista) << " |||| "<< sizeof(arr);
+
+	//checking if TList.empty() is working:
+	TList<int> new_list;
+	std::cout << "\n\n" << new_list.getLength();
+	std::cout << "\n\nNowa lista jest: " << new_list.empty() << ". Stara lista jest: " << mlist.empty() << std::endl; //1 for empty, 0 for contains something
 
 	
 

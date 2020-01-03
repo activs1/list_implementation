@@ -3,14 +3,14 @@
 #include <iostream>
 
 template <class T>
-class UList {
+class TList {
 private:
 	int length;
 	Node<T>* head;
 	Node<T>* tail;
 public:
-	UList();
-	~UList();
+	TList();
+	~TList();
 	void push_front(T data);
 	void push_back(T data);
 	void pop_back();
@@ -19,23 +19,24 @@ public:
 	T getFirst();
 	T getLast();
 	T* begin();
+	bool empty();
 };
 
 //List class
 template<class T>
-UList<T>::~UList() {
+TList<T>::~TList() {
 	std::cout << "\nZniszczono liste\n\n";
 }
 
 template<class T>
-UList<T>::UList() {
+TList<T>::TList() {
 	this->length = 0;
 	this->head = nullptr;
 	this->tail = nullptr;
 }
 
 template<class T>
-void UList<T>::push_front(T data) {
+void TList<T>::push_front(T data) {
 	Node<T>* node = new Node<T>(data);
 	node->setData(data);
 	node->setNext(this->head);
@@ -47,7 +48,7 @@ void UList<T>::push_front(T data) {
 }
 
 template<class T>
-void UList<T>::print() {
+void TList<T>::print() {
 	Node<T>* head_now = this->head;
 	int i = 1;
 	while (head_now) {
@@ -58,17 +59,17 @@ void UList<T>::print() {
 }
 
 template <class T>
-int UList<T>::getLength() {
+int TList<T>::getLength() {
 	return length;
 }
 
 template <class T>
-T UList<T>::getFirst() {
+T TList<T>::getFirst() {
 	return head->getData();
 }
 
 template <class T>
-T UList<T>::getLast() {
+T TList<T>::getLast() {
 	Node<T>* head_now = this->head;
 	int i = 0;
 	while (i < this->length-1) {
@@ -79,18 +80,18 @@ T UList<T>::getLast() {
 }
 
 template<class T> 
-T* UList<T>::begin() {
+T* TList<T>::begin() {
 	T* ptr = &head->getData();
 	return ptr;
 }
 
 template<class T>
-void UList<T>::pop_back() {
+void TList<T>::pop_back() {
 
 }
 
 template <class T>
-void UList<T>::push_back(T data) {
+void TList<T>::push_back(T data) {
 	if (length == 0) {
 		push_front(data);
 	}
@@ -100,5 +101,15 @@ void UList<T>::push_back(T data) {
 		this->tail->setNext(node);
 		this->tail = node;
 		length++;
+	}
+}
+
+template <class T>
+bool TList<T>::empty() {
+	if (length == 0) {
+		return true; //is empty
+	}
+	else {
+		return false; //is not empty
 	}
 }
