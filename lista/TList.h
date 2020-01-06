@@ -19,6 +19,7 @@ public:
 	T getFirst();
 	T getLast();
 	T* begin();
+	T* end();
 	bool empty();
 };
 
@@ -81,7 +82,15 @@ T TList<T>::getLast() {
 
 template<class T> 
 T* TList<T>::begin() {
-	T* ptr = &head->getData();
+	T data = head->getData();
+	T* ptr = &data;
+	return ptr;
+}
+
+template <class T>
+T* TList<T>::end() {
+	T data = tail->getData();
+	T* ptr = &data;
 	return ptr;
 }
 
