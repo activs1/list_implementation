@@ -140,7 +140,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="UList.cpp" />
+    <ClCompile Include="TList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Node.h" />
