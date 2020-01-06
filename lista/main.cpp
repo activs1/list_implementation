@@ -2,18 +2,20 @@
 #include "UList.h"
 #include <list>
 
+const int ARR_SIZE = 11;
+
 int main() {
 	
 	TList<int> mlist;
 
 	std::list<int> lista;
 
-	int arr[11];
+	int arr[ARR_SIZE];
 
-	for (int i = 0; i < 11; ++i) {
-		mlist.push_back(i + 10);
-		lista.push_back(i + 10);
-		arr[i] = i + 10;
+	for (int i = 0; i < ARR_SIZE; ++i) {
+		mlist.push_back(i + ARR_SIZE - 1);
+		lista.push_back(i + ARR_SIZE - 1);
+		arr[i] = i + ARR_SIZE - 1;
 	}
 	//mlist.push_back(10);
 
@@ -37,7 +39,7 @@ int main() {
 	std::cout << "\n\n" << new_list.size();
 	std::cout << "\n\nNowa lista jest: " << new_list.empty() << ". Stara lista jest: " << mlist.empty() << std::endl; //1 for empty, 0 for contains something
 
-	
+	std::cout << "\n\n\n" << *mlist.end();
 
 	return 0;
 }
