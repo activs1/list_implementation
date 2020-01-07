@@ -9,17 +9,30 @@ private:
 	Node<T>* head;
 	Node<T>* tail;
 public:
+	class Iterator {
+		Node<T>* current_segment;
+		T* current_ptr;
+	public:
+		Iterator():current_ptr(nullptr), current_segment(nullptr){}
+		~Iterator();
+		void operator = (Node<T>* obj);
+		T operator * ();
+
+	};
 	TList();
 	~TList();
 	void push_front(T data);
 	void push_back(T data);
 	void pop_back();
+	void pop_front();
 	void print();
 	int size();
 	T getFirst();
 	T getLast();
 	T* begin();
 	T* end();
+
+	Node<T>* startPtr();
 	bool empty();
 };
 
@@ -96,6 +109,13 @@ T* TList<T>::end() {
 
 template<class T>
 void TList<T>::pop_back() {
+	//Reconnect remaining list to nullptr
+
+	delete tail;
+}
+
+template<class T>
+inline void TList<T>::pop_front() {
 
 }
 
@@ -116,4 +136,25 @@ void TList<T>::push_back(T data) {
 template <class T>
 bool TList<T>::empty() {
 	return length == 0 ? true : false;
+}
+
+template <class T>
+Node<T>* TList<T>::startPtr() {
+	return head;
+}
+
+
+template<class T>
+inline TList<T>::Iterator::~Iterator()
+{
+}
+
+template <class T>
+void TList<T>::Iterator::operator = (Node<T>* obj) {
+	current_segment = obj;
+}
+
+template<class T>
+T TList<T>::Iterator::operator*(){
+	return current_segment->getData();
 }

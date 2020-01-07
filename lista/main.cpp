@@ -41,5 +41,11 @@ int main() {
 
 	std::cout << "\n\n\n" << *mlist.end();
 
+	TList<int>::Iterator iter;
+	iter = mlist.startPtr();
+
+	std::cout << "\n\n" << "Iterator: " << *iter << std::endl;
+
+
 	return 0;
 }
