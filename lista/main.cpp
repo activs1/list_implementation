@@ -39,12 +39,47 @@ int main() {
 	std::cout << "\n\n" << new_list.size();
 	std::cout << "\n\nNowa lista jest: " << new_list.empty() << ". Stara lista jest: " << mlist.empty() << std::endl; //1 for empty, 0 for contains something
 
-	std::cout << "\n\n\n" << *mlist.end();
+																													  
+	
 
 	TList<int>::Iterator iter;
-	iter = mlist.startPtr();
+	iter = mlist.begin();
 
-	std::cout << "\n\n" << "Iterator: " << *iter << std::endl;
+	std::cout << "\n\n" << "Iterator: " << *(++iter) << std::endl;
+
+
+
+
+	mlist.push_front(1453);
+
+	TList<int>::Iterator begin, end;
+	begin = mlist.begin();
+	end = mlist.end();
+	std::cout << "\nPorownanie iteratorow na poczatek i koniec:";
+	std::cout << "\n-> operator ==: " << (begin == end);
+	std::cout << "\n-> operator !=: " << (begin != end);
+	///std::cout << "\n-> operator <=: " << (begin <= end);
+	//std::cout << "\n-> operator >=: " << (begin >= end);
+	std::cout << "\n-> operator <: " << (begin < end);
+	//std::cout << "\n-> operator >: " << (begin > end);
+
+	std::cout << std::endl;
+
+	TList<int>::Iterator iterator = mlist.begin();
+	for (iterator; iterator != mlist.end(); ++iterator) {
+		std::cout << "| " << *iterator << " |";
+	}
+
+	std::cout << std::endl;
+
+
+	std::list<int>::iterator iterl;
+	for (iterl = lista.begin(); iterl != lista.end(); ++iterl) {
+		std::cout << "| " << *iterl << " |";
+	}
+
+
+
 
 
 	return 0;

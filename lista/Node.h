@@ -10,15 +10,12 @@ public:
 	void setData(T data);
 	T getData();
 	Node* getNext();
-	T operator*(Node<T> const& obj) {
-		return obj.data;
-	}
 };
 
 template<class T>
 Node<T>::Node(T data) {
 	this->data = data;
-	this->next = nullptr;
+	next = nullptr;
 }
 
 template<class T>
@@ -36,7 +33,8 @@ Node<T>* Node<T>::getNext() {
 	return next;
 }
 
+
 template<class T>
 T Node<T>::getData() {
-	return this->data;
+	return data;
 }
